@@ -36,7 +36,7 @@
     z-index: 100;
 }
 
-.navbar-brand.nav-link{
+.navbar-brand.nav-link,.crt-evnt{
     color:#f05537!important;
 }
 .nav-link{

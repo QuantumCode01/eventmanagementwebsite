@@ -38,7 +38,7 @@
                           <!-- events name -->
                         <p class="eventname lh-1">{{et.event_name}}</p>
                            <!-- date on which event is scheduled  -->
-                        <p class="eventdate lh-1">{{et.date|date:"D, M j, h:i:A"}}</p>
+                        <p class="eventdate lh-1">{{et.date|date:"D, M j"}}, <span> {{et.time}}</span></p>
                           <!-- location at which event is going to happen  -->
                         <p class="eventlocation lh-1">{{et.location}}</p>
 
@@ -66,16 +66,11 @@
 
 
 
-              <!-- <p class="display-6 font">{{et.event_name}}</p>
-              <p class="lead">{{et.date|date:"D, M j, h:i:A"}}</p>
-              <p class="lead">{{et.location}}</p>
-              <div class=""><img src="{{et.image.url}}" alt="" height="200px"></div> -->
+           
 
 
 
-              
-         
-        {% endfor %}
+         {% endfor %}
        
        
 

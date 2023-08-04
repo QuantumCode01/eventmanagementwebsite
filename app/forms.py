@@ -29,5 +29,5 @@ class EventForm(forms.ModelForm):
         fields = ['event_name','date','time','location','image']
         labels={'event_name':"Event Title",'date':'Event Starts','time':'Time','location':'Venue Location','image':'Main Event Image'}
         widgets={'event_name':forms.TextInput(attrs={'class':'form-control','placeholder':'Be clear and descriptive'}), 'date':forms.DateInput(attrs={'type':'date','placeholder':'mm-dd-yyyy','class':'form-control'}),
-           'time':forms.TimeInput(attrs={'type':'time','class':'form-control'}),
+           'time':forms.TimeInput(format='%I:%M %p',attrs={'type':'time','class':'form-control','input_format':'%I:%M:%S'}),
            'location':forms.TextInput(attrs={'class':'form-control'}),} 

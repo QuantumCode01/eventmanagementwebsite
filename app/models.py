@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class event(models.Model):
     name=models.ForeignKey(User, on_delete=models.CASCADE, null=True,blank=True)
     event_name=models.CharField(max_length=150)
-    date=models.DateTimeField()
+    date=models.DateField()
     time=models.TimeField(null=True)
     location = models.CharField(max_length=200)
     image = models.ImageField(upload_to='eventimages')
