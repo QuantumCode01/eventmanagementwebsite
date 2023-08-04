@@ -1,0 +1,51 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+                           <!-- this template is to see the events created by user only user can see theese events -->
+<h3 class="font my-5" style="color:orangered;">
+    Your Events
+</h3>
+
+<div class="row justify-content-center">
+    <div class="col-6 text-center mb-2 ">
+    {% if messages %}
+       {% for message in messages %}
+       <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+             <strong>{{message}}.</strong>
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+       {% endfor %}
+    {% endif %}
+    </div>
+</div>
+
+   
+
+<!-- event details are passed here from the view -->
+{% for et in event %}
+<!-- then we use for loop to show the details of event  -->
+<div class="jumbotron jumbotron-fluid jumbo-class  p-3 mb-3">
+    <div class="container">
+        <div class="eventrow row justify-content-evenly">
+            <!-- image of event  -->
+            <div class="col-sm-4">
+                <div class=""><img src="{{et.image.url}}" alt="" height="150px"></div>
+            </div>
+
+            <div class="col-sm-6">
+                <!-- events name -->
+                <p class="eventname lh-1">{{et.event_name}}</p>
+                <!-- date on which event is scheduled  -->
+                <p class="eventdate lh-1">{{et.date|date:"D, M j, h:i:A"}}</p>
+                <!-- location at which event is going to happen  -->
+                <p class="eventlocation lh-1">{{et.location}}</p>
+
+             
+            </div>
+        </div>
+    </div>
+</div><br>
+{% endfor %}
+
+
+{% endblock content %}

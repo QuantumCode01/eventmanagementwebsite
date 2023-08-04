@@ -1,0 +1,140 @@
+     <nav class=" navbar navbar-expand-lg navbar-dark ">
+          <div class="container-fluid pb-0">
+           
+             <a class="navbar-brand nav-link active mb-1 fs-3 fw-bold" aria-current="page" href="{% url 'events' %}">eventbrite</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+              <!-- shows username and its events and also aloow user to create event only when user loggedin   -->
+                {% if  request.user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link active fs-5" aria-current="page">{{request.user|upper}}</a>
+                </li>
+             
+                {% endif %}
+              </ul>
+              
+          
+          
+            <div class="d-flex mb-3">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              {% if request.user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link active fs-5" aria-current="page" href="{% url 'userevents' %}">Your Events</a>
+                  </li>                 
+                  <li class="nav-item">
+                    <a class="nav-link active fs-5" aria-current="page" href="{% url 'createevent' %}">Create Events</a>
+                  </li>                 
+
+                  <li class="nav-item">
+                   <a class="nav-link active fs-5" aria-current="page" href="{% url 'logout' %}">LogOut</a>
+                  </li>
+            {%else%}
+           <!-- if user is not logged in then these filed are visible to user -->
+                   <li class="nav-item">
+                    <a class="nav-link active fs-5" aria-current="page" href="{% url 'login' %}">Login</a>
+                   </li>
+                   <li class="nav-item">
+                    <a class="nav-link active fs-5" aria-current="page" href="{% url 'signup' %}" class="btn btn-primary">Sign Up</a>
+                   </li>
+           
+              {%endif%}
+            </ul>
+
+            <div>
+            
+          </div>
+        </div>
+      </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link active fs-5" aria-current="page">{{request.user}}</a>
+                </li>
+
+                
+                    
+                  <li class="nav-item">
+                    <a class="nav-link active fs-5" aria-current="page" href="{% url 'events' %}" >Home</a><br>
+                  </li>
+                {% endif %}
+              
+            </ul>
+          
+          
+            <div class="d-flex">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              {% if request.user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link active fs-5" aria-current="page" href="{% url 'userevents' %}">Your Events</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active fs-5" aria-current="page" href="{% url 'createevent' %}">Create Event</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active fs-5" aria-current="page" href="{% url 'logout' %}">LogOut</a>
+                  </li>
+            {%else%}
+           
+           
+           
+                   <li class="nav-item">
+                    <a class="nav-link active fs-5" aria-current="page" href="{% url 'login' %}">Login</a>
+                   </li>
+                   <li class="nav-item">
+                    <a class="nav-link active fs-5" aria-current="page" href="{% url 'signup' %}" class="btn btn-primary">Sign Up</a>
+                   </li>
+           
+              {%endif%}
+            </ul>
+
+            <div>
+            
+          </div>
+        </div>
+      </nav> -->
+
+

@@ -1,0 +1,62 @@
+<!-- extending base.html template -->
+{% extends 'app/base.html' %}
+
+<!-- overriding block msg tag to show messages -->
+{% block msg %}
+<div class="row justify-content-center">
+    <div class="col-6 text-center mb-2 ">
+    {% if messages %}
+       {% for message in messages %}
+       <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+             <strong>{{message}}.</strong>
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+       {% endfor %}
+    {% endif %}
+    </div>
+</div>
+{% endblock msg %}
+
+
+
+
+<!-- overriding block content tag to show filed of login form -->
+{% block content %}
+  <div class="container-fluid  mt-2   p-2">
+    <div class="row">
+        <div class="col-sm-4 ">
+
+   
+                <h1 class="login-tag  fw-bold mb-3">Log in</h1>
+            
+                <div>
+                    <!-- login form -->
+                <form action="" method="post"novalidate>
+                    {%csrf_token%}
+                    <!-- this shows errrors whille filling the form -->
+                    {% if form.non_field_errors %}
+                        {% for error in form.non_field_errors %}
+                            <p class="Error alert alert-danger">{{error}}</p>
+                        {% endfor %}
+                    {% endif %}
+                     <!-- for loop to show the field of login form -->
+                        {% for fm in form %}
+                            {{fm.label_tag}} {{fm}}  <small class="text-danger">{{fm.errors|striptags}}</small><br>
+                        {% endfor %}
+                        <!-- form submit button -->
+                        <div class="d-grid mt-3  gap-2">
+                            <input type="Submit" value="Log in"class="btn text-white px-4 fw-bolder pb-2">
+                        </div>
+                            
+                            <p class="fs-6 mt-3">New to ToDoApp?<a href="{% url 'signup' %}" class="text-primary ">Create Account</a></p>
+                </form>
+                </div>
+        </div>
+
+        <div>
+          
+        </div>
+
+     </div>
+   </div>
+{% endblock content %}

@@ -1,0 +1,88 @@
+{% extends 'app/base.html' %}
+
+   <!-- all events created by any user are shown here -->
+
+{% block content %}
+        <h3 class=" font my-5" style="color:orangered;">
+            Events
+        </h3>
+
+        <!-- this is to print any message that is passed in this template from view function events-->
+        <div class="row justify-content-center">
+            <div class="col-6 text-center mb-2 ">
+            {% if messages %}
+               {% for message in messages %}
+               <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                     <strong>{{message}}.</strong>
+                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+               {% endfor %}
+            {% endif %}
+            </div>
+        </div>
+      
+           
+
+    <!-- showing each details of every by usng for loop -->
+        {% for et in event %}
+       
+        <div class="jumbotron jumbotron-fluid jumbo-class  p-3 mb-3">
+            <div class="container">
+                <div class="eventrow row justify-content-evenly p-4">
+                         <!-- image of event  -->
+                    <div class="col-sm-4">
+                        <div class=""><img src="{{et.image.url}}" alt="" height="150px"></div>
+                    </div>
+
+                    <div class="col-sm-6">
+                          <!-- events name -->
+                        <p class="eventname lh-1">{{et.event_name}}</p>
+                           <!-- date on which event is scheduled  -->
+                        <p class="eventdate lh-1">{{et.date|date:"D, M j, h:i:A"}}</p>
+                          <!-- location at which event is going to happen  -->
+                        <p class="eventlocation lh-1">{{et.location}}</p>
+
+
+                        <!-- heartshaped button to show event is liked or not -->
+                        <div class="row justify-content-end">
+                            <div class="col" >
+                                <div style="float:right;">
+                                <a class="event-like btn"pid="{{et.id}}">
+                                    <svg class=" {% if et in liked_events_byuser %} {{'heart-icon'|add:' clicked'}} {% else %} heart-icon {% endif %}" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                                    <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                                </svg>
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div><br>
+            
+
+
+
+              <!-- <p class="display-6 font">{{et.event_name}}</p>
+              <p class="lead">{{et.date|date:"D, M j, h:i:A"}}</p>
+              <p class="lead">{{et.location}}</p>
+              <div class=""><img src="{{et.image.url}}" alt="" height="200px"></div> -->
+
+
+
+              
+         
+        {% endfor %}
+       
+       
+
+    
+  
+    {% endblock content %}
+    
+   
+
+
