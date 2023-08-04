@@ -11,3 +11,10 @@
 # Screenshots of Project UI
 
 ![01](https://github.com/QuantumCode01/eventmanagementwebsite/assets/121271945/39930223-a321-4f33-9ca7-96f51d50a44e)
+
+
+
+![02](https://github.com/QuantumCode01/eventmanagementwebsite/assets/121271945/920a247f-4a1e-4b61-b831-0787df24a12c)
+
+
+![2](https://github.com/QuantumCode01/eventmanagementwebsite/assets/121271945/1719558e-3bdb-4191-a68e-815cc8601ea9)
