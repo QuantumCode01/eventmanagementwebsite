@@ -32,3 +32,18 @@
 
 ![6](https://github.com/QuantumCode01/eventmanagementwebsite/assets/121271945/e25cb000-cb6a-4b44-84ca-272347162a65)
 
+
+![7](https://github.com/QuantumCode01/eventmanagementwebsite/assets/121271945/6fb173c4-636e-40ed-9401-d32dd0c32709)
+
+
+![8](https://github.com/QuantumCode01/eventmanagementwebsite/assets/121271945/2206ed04-7970-445a-91ff-fc8912fe1547)
+
+
+![9](https://github.com/QuantumCode01/eventmanagementwebsite/assets/121271945/265ebe43-6abd-45d9-a294-3d0c60b44d56)
+
+
+![10](https://github.com/QuantumCode01/eventmanagementwebsite/assets/121271945/b29a106c-e068-482e-a47d-bbb92a90241e)
+
+
+![11](https://github.com/QuantumCode01/eventmanagementwebsite/assets/121271945/c146e4cd-97e8-4a75-aa38-24cd06eedee2)
+
